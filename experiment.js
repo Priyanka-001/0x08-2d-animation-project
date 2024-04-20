@@ -20,6 +20,7 @@ class Experiment {
     // const ms = document.timeline.currentTime
     // clock.draw(ms)
     // clock.draw(ms+25000)
+    //clock.draw(ms)
     const clockRafFn = (ts) => {
       clock.draw(ts)
       window.requestAnimationFrame(clockRafFn)
@@ -28,29 +29,29 @@ class Experiment {
     
   }
 
-  runSteppers() {
+  // runSteppers() {
 
-    // Steppers
-    // --------------------------------------------------
-    const stepperOneRaf
-	  = window.requestAnimationFrame(stepperOne)
+  //   // Steppers
+  //   // --------------------------------------------------
+  //   const stepperOneRaf
+	//   = window.requestAnimationFrame(stepperOne)
 
-    const stepperTwoRaf
-	  = window.requestAnimationFrame(stepperTwo)
+  //   const stepperTwoRaf
+	//   = window.requestAnimationFrame(stepperTwo)
 
-    const stepperThree = new StepperThree(
-      '#valueFromStepperThree', 15
-    )
-    const stepperThreeFn = (ts) => {
-      if (!stepperThree.isActive) stepperThree.start()
-      stepperThree.step(ts)
-      window.requestAnimationFrame(stepperThreeFn)
-    }
-    const stepperThreeRaf
-	  = window.requestAnimationFrame(stepperThreeFn)
-    // --------------------------------------------------
+  //   const stepperThree = new StepperThree(
+  //     '#valueFromStepperThree', 15
+  //   )
+  //   const stepperThreeFn = (ts) => {
+  //     if (!stepperThree.isActive) stepperThree.start()
+  //     stepperThree.step(ts)
+  //     window.requestAnimationFrame(stepperThreeFn)
+  //   }
+  //   const stepperThreeRaf
+	//   = window.requestAnimationFrame(stepperThreeFn)
+  //   // --------------------------------------------------
     
-  }
+  // }
 
   hideSteppers() {
     document.querySelector('#side-note')
