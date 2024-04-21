@@ -28,7 +28,8 @@ class Clock extends Domel {
 
     // this.drawDial(ms)
     // this.drawHands(ms)
-    this.drawtrees(ms)
+    
+	this.drawtrees(ms)
     this.drawdvddisk(ms)
     this.drawsun(ms)
     this.drawcloud1(ms)
@@ -39,9 +40,12 @@ class Clock extends Domel {
     this.drawcloud5(ms)
     this.drawcloud5a(ms)
     this.drawcar(ms)
+	
     //this.drawdvddisk(ms)
-
+    //ctx.save();
     ctx.restore();
+	
+	
   }
 
   drawtrees(ms){
@@ -49,9 +53,20 @@ class Clock extends Domel {
     const ctx = canvas.getContext('2d')
     const {width: W, height: H} = canvas 
 
-    ctx.transform(1.65,0,0,1.65,0,180);
+    ctx.transform(1.65,0,0,1.65,0,180)
 
-  ctx.beginPath();
+	// ctx.save();
+	// //ctx.restore();
+	// const x=ms*1e-3;
+	// const h=164,k=120;
+	// ctx.transform(0.1*x,0,0,0.1*x,-h*(0.1*x)+h,k*(0.1*x)+k);
+	//ctx.save();
+	//ctx.transform(0.1*x,0,0,0.1*x,0,0);
+	//146.613420, 119.751240
+	//182.241230, 119.758870
+	
+
+    ctx.beginPath();
 	ctx.fillStyle = 'rgb(255, 255, 255)';
 	ctx.strokeStyle = 'rgb(210, 36, 38)';
 	ctx.lineWidth = 0.396875;
@@ -2339,6 +2354,8 @@ class Clock extends Domel {
 
     ctx.transform(0.5,0,0,0.5,25,-110)
 
+	//ctx.save();
+
     let ct,st;
     const radians = (2*Math.PI/30)*(ms*1e-3)
     ct = Math.cos(radians)
@@ -2743,6 +2760,15 @@ class Clock extends Domel {
 
     ctx.transform(0.6,0,0,0.6,180,200)
 
+	ctx.save();
+
+	const x=(5*(ms*1e-3))%10
+	if (x<5){
+		ctx.transform(1,0,0,1,10-x,0);
+	} else{
+		ctx.transform(1,0,0,1,x,0);
+	}
+
     //ctx.save();
 
     ctx.beginPath();
@@ -2941,6 +2967,16 @@ class Clock extends Domel {
 
     ctx.transform(0.9,0,0,0.9,120,10)
 
+	ctx.save();
+
+	const x=(10*(ms*1e-3))%30
+	if (x<15){
+		ctx.transform(1,0,0,1,30-x,0);
+	} else{
+		ctx.transform(1,0,0,1,x,0);
+	}
+
+
     
     ctx.beginPath();
 	ctx.fillStyle = 'rgb(252, 252, 252)';
@@ -2998,6 +3034,16 @@ class Clock extends Domel {
     const {width: W, height: H} = canvas
     
     ctx.transform(0.8,0,0,0.8,-300,-25)
+
+
+	ctx.save();
+
+	const x=(10*(ms*1e-3))%20
+	if (x<10){
+		ctx.transform(1,0,0,1,x,0);
+	} else{
+		ctx.transform(1,0,0,1,20-x,0);
+	}
 
 
     ctx.beginPath();
@@ -3060,6 +3106,16 @@ class Clock extends Domel {
     ctx.transform(1.9,0,0,1.9,30,45)
 
 
+	ctx.save();
+
+	const x=(20*(ms*1e-3))%30
+	if (x<15){
+		ctx.transform(1,0,0,1,30-x,0);
+	} else{
+		ctx.transform(1,0,0,1,x,0);
+	}
+
+
     ctx.beginPath();
 	ctx.fillStyle = 'rgb(251, 251, 251)';
 	ctx.strokeStyle = 'rgb(247, 253, 253)';
@@ -3118,6 +3174,15 @@ class Clock extends Domel {
     const {width: W, height: H} = canvas 
 
     ctx.transform(0.8,0,0,0.8,230,-90)
+
+	ctx.save();
+
+	const x=(15*(ms*1e-3))%40
+	if (x<20){
+		ctx.transform(1,0,0,1,x,0);
+	} else{
+		ctx.transform(1,0,0,1,40-x,0);
+	}
 
 
     ctx.beginPath();
@@ -3216,6 +3281,15 @@ class Clock extends Domel {
     const {width: W, height: H} = canvas
 
     ctx.transform(0.9,0,0,0.9,-370,70)
+
+	ctx.save();
+
+	const x=(15*(ms*1e-3))%20
+	if (x<10){
+		ctx.transform(1,0,0,1,20-x,0);
+	} else{
+		ctx.transform(1,0,0,1,x,0);
+	}
     
     
     ctx.beginPath();
@@ -3325,6 +3399,15 @@ class Clock extends Domel {
     
     ctx.transform(1,0,0,1,170,-70)
 
+	ctx.save();
+
+	const x=(10*(ms*1e-3))%30
+	if (x<15){
+		ctx.transform(1,0,0,1,x,0);
+	} else{
+		ctx.transform(1,0,0,1,30-x,0);
+	}
+
 
     ctx.beginPath();
 	ctx.fillStyle = 'rgb(255, 255, 255)';
@@ -3420,6 +3503,15 @@ class Clock extends Domel {
 
     ctx.transform(1,0,0,1,250,150)
 
+	ctx.save();
+
+	const x=(15*(ms*1e-3))%36
+	if (x<18){
+		ctx.transform(1,0,0,1,x,0);
+	} else{
+		ctx.transform(1,0,0,1,36-x,0);
+	}
+
 
     ctx.beginPath();
 	ctx.fillStyle = 'rgb(255, 255, 255)';
@@ -3512,6 +3604,16 @@ class Clock extends Domel {
     const {width: W, height: H} = canvas
 
     ctx.transform(1,0,0,1,-190,170)
+
+
+	ctx.save();
+
+	const x=(40*(ms*1e-3))%30
+	if (x<15){
+		ctx.transform(1,0,0,1,15-x,0);
+	} else{
+		ctx.transform(1,0,0,1,x-15,0);
+	}
 
 
     ctx.save();
