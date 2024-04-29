@@ -29,7 +29,7 @@ class Clock extends Domel {
 	  // this.drawDial(ms)
 	  // this.drawHands(ms)
 	  
-	  this.drawtrees(ms)
+	  
 	  this.drawdvddisk(ms)
 	  this.drawsun(ms)
 	  this.drawcloud1(ms)
@@ -39,39 +39,31 @@ class Clock extends Domel {
 	  this.drawcloud4(ms)
 	  this.drawcloud5(ms)
 	  this.drawcloud5a(ms)
-	  
-	  ctx.save();
-	  ctx.restore();
+	  this.drawtrees(ms)
 	  this.drawmusic(ms)
-	  ctx.save();
-	  ctx.restore();
 	  this.drawcircle(ms)
 	  this.drawlines(ms)
-	  
-	  //this.drawdvddisk(ms)
-	  ctx.save();
-	  ctx.restore();
-	  this.drawcar(ms)
-	//   ctx.save();
-	//   ctx.restore();
-	//   this.drawcircle(ms)
-	  
+	  this.drawcar(ms)	  
 	}
   
 	drawtrees(ms){
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas 
+
+	  ctx.restore();
 	
-	  ctx.transform(1.65,0,0,1.65,0,180)
+	  ctx.transform(2.2,0,0,2.2,-410,10)
 
 	  
   
-	  // ctx.save();
-	  // //ctx.restore();
-	  // const x=ms*1e-3;
-	  // const h=164,k=120;
-	  // ctx.transform(1+0.1*x,0,0,1+0.1*x,-h*(0.1*x)+h,k*(0.1*x)+k);
+	  ctx.save();
+	  //ctx.restore();
+	  const x=ms*1e-3;
+	  const h=148,k=120;
+	  const sx=1+0.15*x;
+	  ctx.transform(sx,0,0,sx,-h*(sx)+h,-k*(sx)+k);
+	  //ctx.restore();
 	  //ctx.save();
 	  //ctx.transform(0.1*x,0,0,0.1*x,0,0);
 	  //146.613420, 119.751240
@@ -2351,7 +2343,7 @@ class Clock extends Domel {
 	  ctx.moveTo(140.900790, 118.473040);
 	  ctx.bezierCurveTo(140.853790, 118.718690, 140.886990, 125.679740, 140.886990, 125.679740);
 	  ctx.closePath();
-	ctx.fill();
+	  ctx.fill();
 	  ctx.stroke();
 	  ctx.restore();
   
@@ -2363,10 +2355,13 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
+
+	  //ctx.restore();
   
-	  ctx.transform(0.5,0,0,0.5,25,-110)
+	  ctx.transform(0.8,0,0,0.8,50,20)
   
-	  //ctx.save();
+	  ctx.save();
+	  
   
 	  let ct,st;
 	  const radians = (2*Math.PI/30)*(ms*1e-3)
@@ -2769,6 +2764,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
+
+	  ctx.restore();
   
 	  ctx.transform(0.6,0,0,0.6,180,200)
   
@@ -2974,7 +2971,9 @@ class Clock extends Domel {
 	drawcloud1(ms){
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
-	  const {width: W, height: H} = canvas 
+	  const {width: W, height: H} = canvas
+	  
+	  ctx.restore();
   
   
 	  ctx.transform(0.9,0,0,0.9,120,10)
@@ -3042,6 +3041,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
+
+	  ctx.restore();
 	  
 	  ctx.transform(0.8,0,0,0.8,-300,-25)
   
@@ -3112,6 +3113,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
+
+	  ctx.restore();
 	  
 	  ctx.transform(1.9,0,0,1.9,30,45)
   
@@ -3182,6 +3185,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas 
+
+	  ctx.restore();
   
 	  ctx.transform(0.8,0,0,0.8,230,-90)
   
@@ -3289,6 +3294,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
+
+	  ctx.restore();
   
 	  ctx.transform(0.9,0,0,0.9,-370,70)
   
@@ -3405,6 +3412,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
+
+	  ctx.restore();
 	  
 	  
 	  ctx.transform(1,0,0,1,170,-70)
@@ -3509,6 +3518,8 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas 
+
+	  ctx.restore();
   
   
 	  ctx.transform(1,0,0,1,250,150)
@@ -3612,12 +3623,11 @@ class Clock extends Domel {
 		const ctx = canvas.getContext('2d')
 		const {width: W, height: H} = canvas
 		//ctx.save();
-		
-	
-		ctx.transform(1.5,0,0,1.5,-80,-430)
 
+		ctx.restore();
 		
 	
+		ctx.transform(0.8,0,0,0.8,120,-200)
 	
 		ctx.save();
 		ctx.transform(1.000000, 0.000000, 0.000000, 1.000000, -1.166230, 13.606000);
@@ -3627,6 +3637,7 @@ class Clock extends Domel {
 		ctx.font = "normal normal 18.3444px Arial";
 		ctx.fillText("JOURNEY SONG", 17.493456, 104.960720);
 		ctx.restore();
+		
 		
 	// #text2
 		ctx.fillStyle = 'rgb(0, 0, 0)';
@@ -3864,9 +3875,9 @@ class Clock extends Domel {
 	  const canvas = this.el
 	  const ctx = canvas.getContext('2d')
 	  const {width: W, height: H} = canvas
-	  ctx.restore()
+	  ctx.restore();
   
-	  ctx.transform(0.9,0,0,0.9,-140,240)
+	  ctx.transform(0.7,0,0,0.7,-80,200)
   
   
 	  ctx.save();
@@ -4749,6 +4760,8 @@ class Clock extends Domel {
 		const canvas = this.el
 		const ctx = canvas.getContext('2d')
 		const {width: W, height: H} = canvas
+
+		ctx.restore();
 		ctx.transform(1,0,0,1,40,132.5)
 
 		ctx.save();
@@ -4756,7 +4769,7 @@ class Clock extends Domel {
 		ctx.transform(1,0,0,1,x,0)
 		//ctx.restore();
 
-		ctx.save();
+		
 		ctx.fillStyle = 'rgb(0, 0, 0)';
 		ctx.strokeStyle = 'rgb(0, 0, 0)';
 		ctx.lineWidth = 0.000000;
@@ -4774,18 +4787,19 @@ class Clock extends Domel {
 		const {width: W, height: H} = canvas
 		ctx.restore();
 
-		ctx.save
+		ctx.save();
 		ctx.beginPath();
 	  ctx.fillStyle = 'rgb(255, 255, 255)';
 	  ctx.strokeStyle = 'rgb(255, 255, 255)';
 	  ctx.lineWidth = 4;
 	  ctx.lineCap = 'round';
-	  ctx.moveTo(-40, 330);
-	  ctx.lineTo(-200,470);
-	  ctx.moveTo(-30, 330);
-	  ctx.lineTo(105,470);
+	  ctx.moveTo(-5, 270);
+	  ctx.lineTo(-220,470);
+	  ctx.moveTo(5, 270);
+	  ctx.lineTo(220,470);
 	  ctx.fill();
 	  ctx.stroke();
+	  ctx.restore();
 	}
   
 	
